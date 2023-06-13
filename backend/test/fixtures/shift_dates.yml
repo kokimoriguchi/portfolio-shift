@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  work_day: 2023-06-13
+  is_attendance: false
+
+two:
+  work_day: 2023-06-13
+  is_attendance: false

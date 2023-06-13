@@ -1,5 +1,5 @@
 current directory: /Users/kokimoriguchi/portfolio-shift/backend/vendor/bundle/ruby/3.1.0/gems/mysql2-0.5.5/ext/mysql2
-/Users/kokimoriguchi/.rbenv/versions/3.1.2/bin/ruby -I /Users/kokimoriguchi/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20230613-80774-i38vcy.rb extconf.rb --with-ldflags\=-L/usr/local/opt/openssl/lib
+/Users/kokimoriguchi/.rbenv/versions/3.1.2/bin/ruby -I /Users/kokimoriguchi/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20230613-93677-embipd.rb extconf.rb --with-ldflags\=-L/usr/local/opt/openssl/lib
 checking for rb_absint_size()... yes
 checking for rb_absint_singlebit_p()... yes
 checking for rb_gc_mark_movable()... yes
@@ -60,4 +60,4 @@ ld: warning: directory not found for option '-L/usr/local/opt/openssl/lib'
 
 current directory: /Users/kokimoriguchi/portfolio-shift/backend/vendor/bundle/ruby/3.1.0/gems/mysql2-0.5.5/ext/mysql2
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20230613-80774-7fnuw5/mysql2
+/usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20230613-93677-ph783j/mysql2

@@ -1,5 +1,5 @@
 current directory: /Users/kokimoriguchi/portfolio-shift/backend/vendor/bundle/ruby/3.1.0/gems/msgpack-1.7.1/ext/msgpack
-/Users/kokimoriguchi/.rbenv/versions/3.1.2/bin/ruby -I /Users/kokimoriguchi/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20230613-80774-hdfz60.rb extconf.rb
+/Users/kokimoriguchi/.rbenv/versions/3.1.2/bin/ruby -I /Users/kokimoriguchi/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20230613-93677-9sskom.rb extconf.rb
 checking for ruby/st.h... yes
 checking for st.h... no
 checking for rb_enc_interned_str() in ruby.h... yes
@@ -35,4 +35,4 @@ linking shared-object msgpack/msgpack.bundle
 
 current directory: /Users/kokimoriguchi/portfolio-shift/backend/vendor/bundle/ruby/3.1.0/gems/msgpack-1.7.1/ext/msgpack
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20230613-80774-fleyjc/msgpack
+/usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20230613-93677-5mnrva/msgpack

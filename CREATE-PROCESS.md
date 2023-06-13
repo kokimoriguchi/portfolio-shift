@@ -1,5 +1,7 @@
 # 作成手順書
 
+## Rails セットアップ
+
 1. portfolio-shift の作成
 2. 上記ディレクトリに移動し、rails new backend -d mysql --api でバックエンドディレクトリの作成
 3. Gem ファイルに gem 'dotenv-rails'と gem 'rack-cors'を追記.
@@ -46,6 +48,9 @@ end
 
 11. その後 bundle exec rubocop --auto-gen-config を打ち込むとファイル作成される。bundle exec rubocop で使用可能。カレントディレクトリ以降検査。-a で自動修正。
 12. mysql.server start して DB サーバー立ち上げてから rails 　 db:create でデータベース作成。これでとりあえず rails s で立ち上げ確認
+
+## React セットアップ
+
 13. npx create-react-app frontend で react の雛形作成
 14. frontend ディレクトリで npm install axios で axios のインストール
 15. tailwind の追加。npm install -D tailwindcss postcss autoprefixer
@@ -71,3 +76,9 @@ plugins: [],
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 ```
+
+## テーブル セットアップ
+
+19. gem の bcrypt のコメントアウト外して bundle install 実行
+20. rails g model Stores name:string number:integer password:string で stores テーブルの作成。
+21. 上記要領で ER 図通りのテーブルを作成する。

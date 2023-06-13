@@ -1,5 +1,5 @@
 current directory: /Users/kokimoriguchi/portfolio-shift/backend/vendor/bundle/ruby/3.1.0/gems/nio4r-2.5.9/ext/nio4r
-/Users/kokimoriguchi/.rbenv/versions/3.1.2/bin/ruby -I /Users/kokimoriguchi/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20230613-80774-voev91.rb extconf.rb
+/Users/kokimoriguchi/.rbenv/versions/3.1.2/bin/ruby -I /Users/kokimoriguchi/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20230613-93677-z7dif8.rb extconf.rb
 checking for unistd.h... yes
 checking for linux/aio_abi.h... no
 checking for linux/io_uring.h... no
@@ -374,4 +374,4 @@ linking shared-object nio4r_ext.bundle
 
 current directory: /Users/kokimoriguchi/portfolio-shift/backend/vendor/bundle/ruby/3.1.0/gems/nio4r-2.5.9/ext/nio4r
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20230613-80774-dk6f8z
+/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20230613-93677-o3zsau

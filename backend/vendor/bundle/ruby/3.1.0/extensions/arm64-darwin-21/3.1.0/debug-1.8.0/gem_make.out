@@ -1,5 +1,5 @@
 current directory: /Users/kokimoriguchi/portfolio-shift/backend/vendor/bundle/ruby/3.1.0/gems/debug-1.8.0/ext/debug
-/Users/kokimoriguchi/.rbenv/versions/3.1.2/bin/ruby -I /Users/kokimoriguchi/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20230613-80774-kq33dh.rb extconf.rb
+/Users/kokimoriguchi/.rbenv/versions/3.1.2/bin/ruby -I /Users/kokimoriguchi/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20230613-93677-3mcxqm.rb extconf.rb
 creating Makefile
 
 current directory: /Users/kokimoriguchi/portfolio-shift/backend/vendor/bundle/ruby/3.1.0/gems/debug-1.8.0/ext/debug
@@ -13,4 +13,4 @@ linking shared-object debug/debug.bundle
 
 current directory: /Users/kokimoriguchi/portfolio-shift/backend/vendor/bundle/ruby/3.1.0/gems/debug-1.8.0/ext/debug
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 debug.bundle ./.gem.20230613-80774-5hzotm/debug
+/usr/bin/install -c -m 0755 debug.bundle ./.gem.20230613-93677-xocdxm/debug

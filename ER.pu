@@ -1,0 +1,88 @@
+@startuml ER
+
+entity "employees" as employees {
+  +-- ID (PK) : integer
+  +-- store_id (PK) : integer
+  --
+  name : string
+  number (UNI) : integer
+  is_manager : boolean
+}
+
+entity "shift_times" as shift_times {
+  +-- ID (PK) : integer
+  +-- shift_date_id (FK) : integer
+  --
+  start_time : time
+  end_time : time
+}
+
+entity "shift_dates" as shift_dates {
+  +-- ID (PK) : integer
+  --
+  work_day : date
+  is_attendance : boolean
+}
+
+entity "employer_shifts" as employer_shifts {
+  +-- ID (PK) : integer
+  +-- employer_id (FK) : integer
+  +-- shift_date_id (FK) : integer
+  --
+}
+
+entity "approve_months" as approve_months {
+  +-- ID (PK) : integer
+  +-- store_id (FK) : integer
+  --
+  year : integer
+  month : integer
+  is_approve : boolean
+}
+
+entity "departments" as departments {
+  +-- ID (PK) : integer
+  +-- employer_id (FK) : integer
+  --
+  name : string
+}
+
+entity "skills" as skills {
+  +-- ID (PK) : integer
+  --
+  name : string
+  is_processing : boolean
+}
+
+entity "employer_skills" as employer_skills {
+  +-- ID (PK) : integer
+  +-- employer_id (FK) : integer
+  +-- skill_id (FK) : integer
+  --
+}
+
+entity "stores" as stores {
+  +-- ID (PK) : integer
+  --
+  name : string
+  number : integer
+  password (UNI) : string
+}
+
+entity "notices" as notices {
+  +-- ID (PK) : integer
+  +-- store_id (FK) : integer
+  --
+  content : text
+}
+stores -r-{ notices
+stores -d-{ employees
+employees -l-{ employer_shifts
+employer_shifts }-u- shift_dates
+shift_times -- shift_dates
+employer_skills -l-{ employees
+employer_skills --{ skills
+departments -u-{ employees
+approve_months }-- stores
+
+@enduml

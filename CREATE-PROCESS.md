@@ -80,5 +80,30 @@ plugins: [],
 ## テーブル セットアップ
 
 19. gem の bcrypt のコメントアウト外して bundle install 実行
-20. rails g model Stores name:string number:integer password:string で stores テーブルの作成。
-21. 上記要領で ER 図通りのテーブルを作成する。
+20. rails g model store name:string number:integer password:string で stores テーブルの作成。
+21. 上記要領で ER 図通りのテーブルを作成する。※単数形で作成すること。自動で複数形単数形に変換される。※認証部分 devise で作成するのでログインのモデルは作成しない。
+22. gem 'devise'を記述し install する
+23. gem 'devise_token_auth'、gem 'devise-i18n'を記述し install する。
+24. rails g devise:install で devise の雛形を作成する。config/locales/device.en.yml ファイルが作成される。
+25. rails g devise_token_auth:install Store auth と rails g devise_token_auth:install Employer auth で devise の記述のある migration ファイルの作成。
+26. マイグレーションファイルの中身のカラム等変更。今回メールは使用しないので add_index :employers, [:name, :number],unique: true のように変更する。
+27. rails db:migrate 実行しテーブルできていることを確認。
+28. rails g devise:i18n:locale ja を実行し、/config/locales/devise.views.ja.yml 作成される。
+29. アプリケーションコントローラーにか記述する。
+
+```
+before_action do
+  I18n.locale = :ja
+end
+```
+
+30. コントローラーに api/v1/auth 以下に registrations コントローラーを作成する。そして下記記述
+
+```
+  private
+
+  def sign_up_params
+    params.permit(:name, :number, :email, :password, :password_confirmation)
+  end
+
+```

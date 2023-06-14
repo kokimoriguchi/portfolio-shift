@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_13_120112) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_14_044437) do
   create_table "approve_months", charset: "utf8mb4", force: :cascade do |t|
     t.integer "year", null: false
     t.integer "month", null: false
@@ -25,30 +25,28 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_120112) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "employer_shifts", charset: "utf8mb4", force: :cascade do |t|
-    t.bigint "employer_id", null: false
-    t.bigint "shift_date_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["employer_id"], name: "index_employer_shifts_on_employer_id"
-    t.index ["shift_date_id"], name: "index_employer_shifts_on_shift_date_id"
-  end
-
-  create_table "employer_skills", charset: "utf8mb4", force: :cascade do |t|
-    t.bigint "employer_id", null: false
-    t.bigint "skill_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["employer_id"], name: "index_employer_skills_on_employer_id"
-    t.index ["skill_id"], name: "index_employer_skills_on_skill_id"
-  end
-
   create_table "employers", charset: "utf8mb4", force: :cascade do |t|
+    t.string "provider", default: "email", null: false
+    t.string "uid", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.boolean "allow_password_change", default: false
+    t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.string "name", null: false
-    t.integer "number", null: false
+    t.string "number", null: false
     t.boolean "is_manager", null: false
+    t.text "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["confirmation_token"], name: "index_employers_on_confirmation_token", unique: true
+    t.index ["name", "number"], name: "index_employers_on_name_and_number", unique: true
+    t.index ["reset_password_token"], name: "index_employers_on_reset_password_token", unique: true
+    t.index ["uid", "provider"], name: "index_employers_on_uid_and_provider", unique: true
   end
 
   create_table "notices", charset: "utf8mb4", force: :cascade do |t|
@@ -79,15 +77,28 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_120112) do
   end
 
   create_table "stores", charset: "utf8mb4", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "number", null: false
-    t.string "password_digest", null: false
+    t.string "provider", default: "email", null: false
+    t.string "uid", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.boolean "allow_password_change", default: false
+    t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.string "name"
+    t.string "number"
+    t.text "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.index ["confirmation_token"], name: "index_stores_on_confirmation_token", unique: true
+    t.index ["email"], name: "index_stores_on_email", unique: true
+    t.index ["name", "number"], name: "index_stores_on_name_and_number", unique: true
+    t.index ["reset_password_token"], name: "index_stores_on_reset_password_token", unique: true
+    t.index ["uid", "provider"], name: "index_stores_on_uid_and_provider", unique: true
   end
 
-  add_foreign_key "employer_shifts", "employers"
-  add_foreign_key "employer_shifts", "shift_dates"
-  add_foreign_key "employer_skills", "employers"
-  add_foreign_key "employer_skills", "skills"
 end

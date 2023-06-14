@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  namespace :api do
+    namespace :v1 do
+      # api/v1/auth/storesとapi/v1/auth/employersの認証ルートの設定。
+      mount_devise_token_auth_for 'Store', at: 'auth/stores', controllers: {
+        registrations: 'api/v1/auth/registrations'}
+      mount_devise_token_auth_for 'Employer', at: 'auth/employers', controllers: {
+        registrations: 'auth/registrations'}
+    end
+  end
 end
